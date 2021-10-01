@@ -1,0 +1,25 @@
+{{ extends "global/Page.html" }}
+{{ block title }}You can now make your choice{{ endblock }}
+{{ block content }}
+
+
+    <p>
+	{% if player.r > 1 %}
+        {% if player.type == 0 %}
+            {% include Constants.Contribute0_template %}
+        {% else %}
+            {% include Constants.Contribute1_template %}
+        {% endif %}
+    {% endif %}
+    <br><br>
+        <span style="font-size:18px"> You have an endowment of {{player.endowment}} EURc.<br>
+        <span style="font-size:15px"> How much of it do you want to contribute?<br>
+        <span style="font-size:12px"> Please enter an integer amount between 0 and {{player.endowment}}.</span>
+    </p>
+
+
+    {{ formfields }}
+
+    {{ next_button }}
+
+{{ endblock }}

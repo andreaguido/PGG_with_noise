@@ -1,0 +1,25 @@
+{{ extends "global/Page.html" }}
+{{ block title }}Round {{subsession.round_number}}{{ endblock }}
+{{ block content }}
+
+    {% if player.r == 1 %}
+    <p>
+       <span style="font-size:20px;"> You were assigned an endowment of <span style="color:green"> {{player.endowment}} EURc</span>, which will remain the same for the rest of the study.<br><br>
+
+       You will make your choice on the next screen.
+       </span>
+    </p>
+    {% endif %}
+
+    {% if player.r > 1 %}
+    <p>
+       <span style="font-size:20px;"> Your endowment is {{player.endowment}} EURc.<br><br>
+
+       You will make your choice on the next screen.
+       </span>
+    </p>
+    {% endif %}
+
+    {{ next_button }}
+
+{{ endblock }}

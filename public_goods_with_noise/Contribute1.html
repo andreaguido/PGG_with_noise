@@ -1,0 +1,22 @@
+{% load otree %}
+
+<div class="card bg-light m-3">
+    <div class="card-body">
+    {% if player.selfdisplay == 0 %}
+    <p>
+        <span style="font-size:20px;"> The other participant(s) with an endowment of 50 EURc contributed around <b>{{player.pertother}} EURc</b></span><br><br><br>
+
+        <span style="font-size:20px;"> The other participant(s) with an endowment of 100 EURc contributed around <b>{{player.pertsame}} EURc</b></span>
+    {% endif %}
+    {% if player.selfdisplay == 1 %}
+    <p>
+        <span style="font-size:20px;"> The other participant(s) with an endowment of 100 EURc contributed around <b>{{player.pertsame}} EURc</b></span><br><br><br>
+        <span style="font-size:20px;"> The other participant(s) with an endowment of 50 EURc contributed around <b>{{player.pertother}} EURc</b></span>
+
+    {% endif %}
+    </p>
+    </div>
+</div>
+
+
+

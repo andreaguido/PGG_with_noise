@@ -1,0 +1,15 @@
+{{ block title }}Results{{ endblock }}
+{{ block content }}
+
+    {% if player.r < Constants.num_rounds %}
+    <p>
+       <span style="font-size:20px;"> This round is concluded. Click on Next to move on.
+       </span>
+    </p>
+    {% endif %}
+
+
+
+    {{ next_button }}
+
+{{ endblock }}

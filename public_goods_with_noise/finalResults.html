@@ -1,0 +1,17 @@
+{{ block title }}Results{{ endblock }}
+{{ block content }}
+
+    {% if player.r == Constants.num_rounds %}
+    <p>
+       <span style="font-size:20px;"> Thank you for participating, the session is now concluded.<br>
+           Please fill in the details below and continue to the next page for information about your payment.
+       </span>
+    </p>
+    {{formfields}}
+
+    {% endif %}
+
+
+    {{ next_button }}
+
+{{ endblock }}
