@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Thank you
+{% endblock %}
+
+{% block content %}
+
+    <div class="panel panel-default" style="margin-bottom:10px">
+        <div class="panel-body">
+            <p><strong>Your ID was: {{ redemption_code }}</strong></p>
+            <p>Please remain seated until your number is called. Then take your number card, and proceed to the cashier.</p>
+            <p><em>Note: For the cashier in the laboratory, oTree can print a list of payments for all participants as a PDF.</em></p>
+        </div>
+    </div>
+
+{% endblock %}
+
