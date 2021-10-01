@@ -79,7 +79,7 @@ def rounding(player:BasePlayer):
 class Roundintro(Page): #this is working as of 15.9 at 19.47
     def before_next_page(player: Player, timeout_happened):
         player.r = player.round_number
-        pl = player.group.get_players()
+        pl = player.subsession.get_players()
         if player.r == 1:
             import itertools
             types = itertools.cycle([0, 1]) #0=poor; 1=rich
