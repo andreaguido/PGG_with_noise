@@ -23,6 +23,8 @@ class Group(BaseGroup):
     pass
 
 class Player(BasePlayer):
+    payment = models.CurrencyField()
+    email = models.StringField()
     pass
 
 

@@ -5,7 +5,7 @@ from otree.api import *
 class Constants(BaseConstants):
     name_in_url = 'public_goods_with_noise'
     players_per_group = 4
-    num_rounds = 20
+    num_rounds = 2
     endowment0 = 50
     endowment1 = 100
     multiplier = 1.8
@@ -71,6 +71,8 @@ def set_payoffs(group: Group):
         p.payoff = p.endowment - p.contribution + group.individual_share
         p.sametype = sum(p2.contribution for p2 in players if (p2 != p and p.type == p2.type))
         p.othertype = round(sum([p2. contribution for p2 in players if (p.type != p2.type)])/2)
+        if p.round_number == Constants.num_rounds:
+            p.participant.final_payment_euros = p.payoff*p.session.config['real_world_currency_per_point']
 
 def rounding(player:BasePlayer):
     player.participant.payoff = round(player.participant.payoff)
@@ -130,6 +132,10 @@ class gameinfo(Page):
 class Contribute(Page):
     form_model = 'player'
     form_fields = ['contribution']
+    def before_next_page(player: Player, timeout_happened):
+        if timeout_happened:
+            import random
+            player.contribution = random.randint(0, Constants.endowment0)
 
 
 class ResultsWaitPage(WaitPage):

@@ -5,7 +5,7 @@ SESSION_CONFIGS = [
     dict(
         name='public_goods_with_noise',
         display_name="PGGwNoise",
-        app_sequence=['public_goods_with_noise'],
+        app_sequence=['public_goods_with_noise', 'payment_info'],
         num_demo_participants=4,
     ),
 ]
@@ -19,7 +19,7 @@ SESSION_CONFIG_DEFAULTS = dict(
     real_world_currency_per_point=0.50, participation_fee=0.00, doc=""
 )
 
-PARTICIPANT_FIELDS = []
+PARTICIPANT_FIELDS = ['final_payment_euros']
 SESSION_FIELDS = []
 
 # ISO-639 code

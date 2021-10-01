@@ -9,9 +9,11 @@
 
     <div class="panel panel-default" style="margin-bottom:10px">
         <div class="panel-body">
-            <p><strong>Your ID was: {{ redemption_code }}</strong></p>
-            <p>Please remain seated until your number is called. Then take your number card, and proceed to the cashier.</p>
-            <p><em>Note: For the cashier in the laboratory, oTree can print a list of payments for all participants as a PDF.</em></p>
+            <p><strong>Your ID was: {{ redemption_code }} and your payment is of {{ payment }}</strong></p>
+            <p>Please, leave your email here to proceed with the Lydia transfer.</p>
+            {% formfield player.email %}
+                {% next_button %}
+
         </div>
     </div>
 
