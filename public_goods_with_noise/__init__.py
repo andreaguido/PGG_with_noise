@@ -8,7 +8,7 @@ class Constants(BaseConstants):
     num_rounds = 2
     endowment0 = 50
     endowment1 = 100
-    multiplier = 1.8
+    multiplier = 2.4
 
     #STORING PAGE INFORMATION
     Contribute0_template = 'public_goods_with_noise/Contribute0.html'
