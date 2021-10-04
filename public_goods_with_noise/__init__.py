@@ -103,8 +103,8 @@ class Roundintro(Page): #this is working as of 15.9 at 19.47
 
         if player.r != 1:
             import random
-            player.noiseS = random.randint(-3, 3)
-            player.noiseO = random.randint(-3, 3)
+            player.noiseS = random.randint(-4, 4)
+            player.noiseO = random.randint(-4, 4)
             prev_player = player.in_round(player.r - 1)
             player.selfdisplay = prev_player.selfdisplay
             player.type = prev_player.type
