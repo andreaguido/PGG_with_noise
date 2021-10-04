@@ -30,6 +30,7 @@ class Player(BasePlayer):
     pertother = models.IntegerField()
     endowment = models.IntegerField()
     selfdisplay = models.IntegerField()
+    human = models.IntegerField(initial = 1)
     female = models.IntegerField(
         choices=[[0, 'Male'], [1, 'Female']],
         label='What is your gender?',
@@ -73,9 +74,9 @@ def set_payoffs(group: Group):
         p.othertype = round(sum([p2. contribution for p2 in players if (p.type != p2.type)])/2)
         if p.round_number == Constants.num_rounds:
             p.participant.final_payment_euros = p.payoff*p.session.config['real_world_currency_per_point']
+            if p.human == 0:
+                p.participant.final_payment_euros = 0
 
-def rounding(player:BasePlayer):
-    player.participant.payoff = round(player.participant.payoff)
 
 # PAGES
 class Roundintro(Page): #this is working as of 15.9 at 19.47
@@ -134,6 +135,7 @@ class Contribute(Page):
     form_fields = ['contribution']
     def before_next_page(player: Player, timeout_happened):
         if timeout_happened:
+            player.human = 0
             import random
             player.contribution = random.randint(0, player.endowment)
 
