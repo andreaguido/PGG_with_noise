@@ -5,7 +5,7 @@ from otree.api import *
 class Constants(BaseConstants):
     name_in_url = 'public_goods_with_noise'
     players_per_group = 4
-    num_rounds = 2
+    num_rounds = 5
     endowment0 = 50
     endowment1 = 100
     multiplier = 2.4
@@ -73,7 +73,7 @@ def set_payoffs(group: Group):
         p.sametype = sum(p2.contribution for p2 in players if (p2 != p and p.type == p2.type))
         p.othertype = round(sum([p2. contribution for p2 in players if (p.type != p2.type)])/2)
         if p.round_number == Constants.num_rounds:
-            p.participant.final_payment_euros = p.payoff*p.session.config['real_world_currency_per_point']
+            p.participant.final_payment_euros = p.participant.payoff*p.session.config['real_world_currency_per_point']
             if p.human == 0:
                 p.participant.final_payment_euros = 0
 
