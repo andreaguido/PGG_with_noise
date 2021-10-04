@@ -135,7 +135,7 @@ class Contribute(Page):
     def before_next_page(player: Player, timeout_happened):
         if timeout_happened:
             import random
-            player.contribution = random.randint(0, Constants.endowment0)
+            player.contribution = random.randint(0, player.endowment)
 
 
 class ResultsWaitPage(WaitPage):
