@@ -5,7 +5,7 @@ from otree.api import *
 class Constants(BaseConstants):
     name_in_url = 'public_goods_with_noise'
     players_per_group = 4
-    num_rounds = 5
+    num_rounds = 20
     endowment0 = 50
     endowment1 = 100
     multiplier = 2.4
