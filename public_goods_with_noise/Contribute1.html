@@ -4,14 +4,14 @@
     <div class="card-body">
     {% if player.selfdisplay == 0 %}
     <p>
-        <span style="font-size:20px;"> The other participant(s) with an endowment of 50 Points contributed around <b>{{player.pertother}} Points</b></span><br><br><br>
+        <span style="font-size:20px;"> The other participant(s) with an endowment of <b>50 Points</b> contributed around <b>{{player.pertother}} Points</b></span><br><br><br>
 
-        <span style="font-size:20px;"> The other participant(s) with an endowment of 100 Points contributed around <b>{{player.pertsame}} Points</b></span>
+        <span style="font-size:20px;"> The other participant(s) with an endowment of <b>100 Points</b> contributed around <b>{{player.pertsame}} Points</b></span>
     {% endif %}
     {% if player.selfdisplay == 1 %}
     <p>
-        <span style="font-size:20px;"> The other participant(s) with an endowment of 100 Points contributed around <b>{{player.pertsame}} Points</b></span><br><br><br>
-        <span style="font-size:20px;"> The other participant(s) with an endowment of 50 Points contributed around <b>{{player.pertother}} Points</b></span>
+        <span style="font-size:20px;"> The other participant(s) with an endowment of <b>100 Points</b> contributed around <b>{{player.pertsame}} Points</b></span><br><br><br>
+        <span style="font-size:20px;"> The other participant(s) with an endowment of <b>50 Points</b> contributed around <b>{{player.pertother}} Points</b></span>
 
     {% endif %}
     </p>
